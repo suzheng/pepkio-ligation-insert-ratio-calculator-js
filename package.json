@@ -1,0 +1,75 @@
+{
+  "name": "pepkio-ligation-insert-ratio-calculator",
+  "version": "0.1.0",
+  "description": "Batch ligation calculator with vector:insert molar ratios, per-reaction pipetting volumes, pooled master mix recipes, and kit-matched incubation guidance via the Pepkio Tools REST API.",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "bin": {
+    "pepkio-ligation-insert-ratio-calculator": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run --exclude '**/integration.test.ts'",
+    "test:integration": "vitest run integration.test.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pepkio/pepkio-ligation-insert-ratio-calculator-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pepkio/pepkio-ligation-insert-ratio-calculator-js/issues"
+  },
+  "homepage": "https://www.pepkio.com/tools/ligation-insert-ratio-calculator",
+  "keywords": [
+    "ligation-insert-ratio-calculator",
+    "cloning",
+    "ligation",
+    "molecular-biology",
+    "vector",
+    "insert",
+    "sticky-end",
+    "blunt-end",
+    "golden-gate",
+    "ta-cloning",
+    "pipetting",
+    "master-mix",
+    "bioinformatics",
+    "pepkio",
+    "typescript",
+    "node",
+    "rest-api"
+  ],
+  "author": "Pepkio Team",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "commander": "^13.1.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "dotenv": "^16.6.1",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.7"
+  }
+}
